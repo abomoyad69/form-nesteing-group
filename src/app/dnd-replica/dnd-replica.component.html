@@ -1,0 +1,28 @@
+presenting form array data aka answers
+
+<div class="form-group" [formGroup]="copyForm">
+
+  <ng-container formArrayName="answers">
+    <div class="values" *ngFor="let group of groupControls.controls; let i = index">
+      <div class="fg" [formGroupName]="i">
+
+        <mat-form-field>
+          <input type="text" matInput formControlName="desc">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="text" matInput formControlName="id">
+          <mat-error>
+              code is entered before
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="number" matInput formControlName="value">
+        </mat-form-field>
+
+      </div>
+    </div>
+  </ng-container>
+
+</div>
